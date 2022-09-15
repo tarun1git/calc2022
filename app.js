@@ -6,13 +6,13 @@
     let equal = document.querySelector('.btn-equal');
 
     buttons.forEach(function(button) {
-        button.addEventListener('click', function(e) {
-            let value = e.target.dataset.num;
+        button.addEventListener('click', function(evt) {
+            let value = evt.target.dataset.num;
             screen.value += value;
-        })
+        });
     });
 
-    equal.addEventListener('click',function(e) {
+    equal.addEventListener('click',function(evt) {
         if (screen.value === '') {
             screen.value = "Please enter";
         }
@@ -20,10 +20,10 @@
             let answer = eval(screen.value);
             screen.value = answer;
         }
-    })
+    });
 
-    clear.addEventListener('click', function(e) {
+    clear.addEventListener('click', function(evt) {
         screen.value = "";
-    })
+    });
 
 })();
